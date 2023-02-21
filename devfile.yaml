@@ -1,8 +1,20 @@
 schemaVersion: 2.1.0
 metadata:
-  name: wazi-code
+  name: wazi-analyze
 components:
-  - name: tools
+  - name: wazi-terminal
     container:
-      image: stg.icr.io/ibm/wazi-code/ibm-wazi-for-devspaces-sidecar:latest
+      image: icr.io/wazi-code/ibm-wazi-for-devspaces-sidecar:latest
       memoryLimit: 3Gi
+      mountSources: true
+      volumeMounts:
+        - name: zowe
+          path: /home/user/.zowe
+        - name: data
+          path: /home/user/data
+  - name: zowe
+    volume:
+      size: 100Mi
+  - name: data
+    volume:
+      size: 1024Mi
