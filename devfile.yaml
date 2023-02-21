@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: wazi-analyze
+  name: wazi-code
 components:
   - name: wazi-terminal
     container:
@@ -8,13 +8,8 @@ components:
       volumeMounts:
         - name: zowe
           path: /home/user/.zowe
-        - name: data
-          path: /home/user/data
       memoryLimit: 3Gi
       mountSources: true
   - name: zowe
     volume:
       size: 100Mi
-  - name: data
-    volume:
-      size: 1024Mi
