@@ -12,9 +12,3 @@ components:
           path: /home/user/.zowe
         - name: data
           path: /home/user/data
-  - name: zowe
-    volume:
-      size: 100Mi
-  - name: data
-    volume:
-      size: 1024Mi
